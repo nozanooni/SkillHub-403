@@ -88,42 +88,6 @@ function initScrollAnimations() {
   });
 }
 
-
-// function initScrollAnimations() {
-//   const style = document.createElement('style');
-//   style.textContent = `
-//     .fade-in {
-//       opacity: 0;
-//       transform: translateY(28px);
-//       transition: opacity 0.6s ease, transform 0.6s ease;
-//     }
-//     .fade-in.visible {
-//       opacity: 1;
-//       transform: translateY(0);
-//     }
-//   `;
-//   document.head.appendChild(style);
-
-//   const targets = document.querySelectorAll('.card, .info-card, .section-header, .page-hero, .table-wrapper');
-//   if (!targets.length) return;
-
-//   const observer = new IntersectionObserver(function (entries) {
-//     entries.forEach(function (entry) {
-//       if (entry.isIntersecting) {
-//         entry.target.classList.add('visible');
-//         observer.unobserve(entry.target);
-//       }
-//     });
-//   }, { threshold: 0.12 });
-
-//   targets.forEach(function (el) {
-//     el.classList.add('fade-in');
-//     observer.observe(el);
-//   });
-// }
-
-// ===== FEEDBACK FORM VALIDATION =====
-
 /*
   This function handles validation for the feedback form before submission.
   It checks that the name, email, and rating fields are filled correctly,
@@ -179,13 +143,13 @@ function initFormValidation() {
     const ratingError = document.getElementById('rating-error'); // gets the error message element for the rating field
     const ratingSelected = Array.from(ratingInputs).some(function (r) { return r.checked; }); // checks whether at least one rating option is selected
 
-    if (!ratingSelected) { // runs if the user did not choose a rating
-      ratingError.classList.add('visible'); // shows the rating error message
-      errors.push('Please select a rating.'); // adds the rating error to the error list
-      isValid = false; // marks the form as invalid
-    } else {
-      ratingError.classList.remove('visible'); //hides the rating error if a choice was selected
-    }
+ if (!ratingSelected) {
+    if (ratingError) ratingError.classList.add('visible');
+    errors.push('Please select a rating.');
+    isValid = false;
+  } else {
+    if (ratingError) ratingError.classList.remove('visible');
+  }
 
     if (!isValid) { // checks whether any validation error was found
       alert('Please fix the following errors before submitting:\n\n• ' + errors.join('\n• ')); // Shows all collected validation errors in one alert message
