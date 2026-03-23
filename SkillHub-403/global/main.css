@@ -356,6 +356,12 @@ footer address {
   transform: translateY(-2px);
 }
 
+/* Styles optional text shown inside form labels */
+.optional-label {
+  color: var(--text-light);
+  font-weight: 400;
+}
+
 /*
   This class styles the ripple element created inside a button when the
   user clicks it. It gives the ripple its small circular shape, places it
@@ -417,6 +423,27 @@ footer address {
   justify-content: center;
   font-size: 1.5rem;
   margin-bottom: 16px;
+}
+
+/* Workshop card icon color variants */
+.card-icon-web {
+  background: #ebf4ff;
+  color: #2c7be5;
+}
+
+.card-icon-uiux {
+  background: #f5f3ff;
+  color: #7c3aed;
+}
+
+.card-icon-ai {
+  background: #ecfdf5;
+  color: #10b981;
+}
+
+.card-icon-career {
+  background: #fffbeb;
+  color: #d97706;
 }
 
 .card-body h3 { margin-bottom: 8px; }
@@ -562,6 +589,27 @@ table#schedule-table .workshop-meta {
   font-size: 0.78rem;
   color: var(--text-light);
 }
+
+/* Styles lighter text used in schedule cells */
+.muted-text {
+  color: var(--text-light);
+}
+
+/* Styles the special note row inside the schedule table */
+.schedule-note-cell {
+  text-align: center;
+  font-style: italic;
+  color: var(--text-light);
+}
+
+/* Styles the note shown below the schedule table */
+.schedule-note {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.9rem;
+}
+
+
 
 /* ===== FORM STYLES (Feedback page) ===== */
 .form-card {
