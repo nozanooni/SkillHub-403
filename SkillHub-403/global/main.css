@@ -138,6 +138,12 @@ header {
   letter-spacing: -0.5px;
 }
 
+/* Applies the primary theme color to highlighted text */
+.text-primary {
+  color: var(--primary);
+}
+
+
 /* Applies the primary theme color to the span element inside the site name */
 #site-name span { color: var(--primary); }
 
@@ -444,6 +450,30 @@ footer address {
 .card-icon-career {
   background: #fffbeb;
   color: #d97706;
+}
+
+.card-icon-focus {
+  background: #ebf4ff;
+}
+
+.card-icon-community {
+  background: #ecfdf5;
+}
+
+.card-icon-ideas {
+  background: #fff7ed;
+}
+.card-icon-blue {
+  background: #ebf4ff;
+}
+.card-icon-purple {
+  background: #f5f3ff;
+}
+.card-icon-green {
+  background: #ecfdf5;
+}
+.card-icon-yellow {
+  background: #fffbeb;
 }
 
 .card-body h3 { margin-bottom: 8px; }
