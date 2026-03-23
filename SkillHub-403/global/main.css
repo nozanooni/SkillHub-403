@@ -3,7 +3,7 @@
 /* Name=Raghad Abdullah Alzahrani , ID=2206740, Section=DAR, Date=20/3 */
 
 
-
+/* Imports the Inter font family from Google Fonts to be used across the website */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 /* ===== CSS VARIABLES / COLOR PALETTE ===== */
@@ -24,15 +24,21 @@
   --radius-lg:  20px;
 }
 
+/* 
+  This section applies the basic reset and default styles of the website.
+  It removes the browser’s default spacing, makes element sizing more
+  consistent, enables smooth scrolling, and sets the main font, text color,
+  background color, and reading size for the page.
+*/
 /* ===== RESET & BASE STYLES ===== */
 *, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  box-sizing: border-box; /* includes padding and border inside the element’s total width and height */
+  margin: 0;  /* removes the default outer spacing from all elements */
+  padding: 0;  /* removes the default inner spacing from all elements */
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* makes anchor link scrolling move smoothly instead of jumping */
 }
 
 body {
@@ -58,19 +64,25 @@ p  { margin-bottom: 1rem; color: var(--text-light); }
 .italic    { font-style: italic; }
 .underline { text-decoration: underline; }
 
+/*
+  This section defines the default appearance of common text elements.
+  It styles links with the main theme color and hover effect, and sets
+  consistent spacing for lists and list items to keep the content clean
+  and readable across the website.
+*/
 a {
-  color: var(--primary);
-  text-decoration: none;
-  transition: color 0.2s;
+  color: var(--primary);  /* sets the default link color using the main theme color */
+  text-decoration: none;  /* removes the default underline from links */
+  transition: color 0.2s;  /* makes the link color change smoothly on hover */
 }
 a:hover { color: #1a5cbf; }
 
 ul, ol {
-  padding-left: 1.5rem;
-  margin-bottom: 1rem;
+  padding-left: 1.5rem;  /* adds left spacing so list markers and text are properly indented */
+  margin-bottom: 1rem;   /* adds space below lists to separate them from following content */
 }
 
-li { margin-bottom: 0.4rem; }
+li { margin-bottom: 0.4rem; } /* adds small spacing between list items */
 
 /* ===== LAYOUT WRAPPER ===== */
 /* Main page container with max-width and centered alignment */
@@ -126,6 +138,7 @@ header {
   letter-spacing: -0.5px;
 }
 
+/* Applies the primary theme color to the span element inside the site name */
 #site-name span { color: var(--primary); }
 
 /* ===== NAVIGATION BAR ===== */
@@ -292,20 +305,6 @@ footer address {
 }
 
 /* ===== BUTTONS ===== */
-/* .btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  border-radius: var(--radius);
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  border: none;
-  transition: all 0.25s;
-  text-decoration: none;
-} */
-
 .btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -357,6 +356,12 @@ footer address {
   transform: translateY(-2px);
 }
 
+/*
+  This class styles the ripple element created inside a button when the
+  user clicks it. It gives the ripple its small circular shape, places it
+  above the button content, and applies the animation that makes it expand
+  and fade out.
+*/
 .btn-ripple {
   position: absolute;
   width: 10px;
@@ -368,10 +373,11 @@ footer address {
   pointer-events: none;
 }
 
+/* Defines the ripple animation effect */
 @keyframes ripple-anim {
   to {
-    transform: scale(30);
-    opacity: 0;
+    transform: scale(30); /* enlarges the ripple circle */
+    opacity: 0;  /* fades the ripple out */
   }
 }
 
@@ -441,6 +447,14 @@ footer address {
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
 .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 
+
+/*
+  This section styles blockquote elements to make quoted text stand out
+  from the rest of the page content. It adds a colored background, a left
+  border, rounded corners, spacing, and text formatting. The cite element
+  inside the blockquote is also styled separately to display the source
+  in a smaller and lighter way.
+*/
 /* ===== BLOCKQUOTE ===== */
 blockquote {
   background: var(--primary-light);
@@ -869,6 +883,12 @@ textarea { min-height: 120px; resize: vertical; }
   margin-top: 4px;
 }
 
+/*
+  This section contains responsive styles for smaller screen sizes.
+  It adjusts text sizes, navigation layout, grid structures, form layout,
+  footer layout, and page spacing so the website remains readable and
+  easy to use on tablets and mobile devices.
+*/
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   h1 { font-size: 2rem; }
@@ -892,7 +912,7 @@ textarea { min-height: 120px; resize: vertical; }
     grid-template-columns: 1fr;
   }
 
-  #footer-grid { grid-template-columns: 1fr; }
+  #footer-grid { grid-template-columns: 1fr; } /* stacks footer content into one column */
 
   .form-card { padding: 28px 20px; }
   .form-row { grid-template-columns: 1fr; }
