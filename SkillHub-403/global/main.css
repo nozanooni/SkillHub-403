@@ -732,10 +732,34 @@ textarea { min-height: 120px; resize: vertical; }
   background: white;
 }
 
-.radio-label:hover, .checkbox-label:hover {
+/* .radio-label:hover, .checkbox-label:hover {
   border-color: var(--primary);
   background: var(--primary-light);
   color: var(--primary);
+} */
+
+.checkbox-label:hover {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.radio-label.rating-good:hover {
+  border-color: #86efac;
+  background: #dcfce7;
+  color: #166534;
+}
+
+.radio-label.rating-average:hover {
+  border-color: #fdba74;
+  background: #ffedd5;
+  color: #c2410c;
+}
+
+.radio-label.rating-poor:hover {
+  border-color: #fca5a5;
+  background: #fee2e2;
+  color: #b91c1c;
 }
 
 .radio-label input, .checkbox-label input {
