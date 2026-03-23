@@ -245,6 +245,20 @@ footer address {
   color: rgba(255,255,255,0.5);
 }
 
+/* ===== SCROLL ANIMATION ===== */
+/* Initial hidden state before element enters the viewport */
+.fade-in {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Final visible state after scroll detection */
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ===== PAGE HERO / BANNER ===== */
 /* Used at top of inner pages */
 .page-hero {
@@ -278,7 +292,7 @@ footer address {
 }
 
 /* ===== BUTTONS ===== */
-.btn {
+/* .btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -290,6 +304,19 @@ footer address {
   border: none;
   transition: all 0.25s;
   text-decoration: none;
+} */
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn-primary {
@@ -328,6 +355,24 @@ footer address {
   background: #0da271;
   color: white;
   transform: translateY(-2px);
+}
+
+.btn-ripple {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-anim 0.5s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-anim {
+  to {
+    transform: scale(30);
+    opacity: 0;
+  }
 }
 
 /* ===== CARDS ===== */
