@@ -84,6 +84,11 @@
     <!-- ===== FEEDBACK FORM ===== -->
     <section class="section">
       <div class="container" style="max-width: 760px">
+        <!-- 
+        This block starts the feedback form and contains the user’s basic contact inputs.
+        It collects the full name and email address, marks them as required fields,
+        and includes placeholder error messages that can be shown during validation.
+      -->
         <form id="feedback-form" class="form-card" novalidate>
           <div class="form-row">
             <div class="form-group">
@@ -119,25 +124,30 @@
             </div>
           </div>
 
+          <!-- 
+          This block continues the feedback form by collecting the user’s overall rating
+          and workshop interests. It provides radio buttons for selecting one required
+          rating option and checkboxes for choosing one or more workshop categories of interest.
+        -->
           <div class="form-group">
             <label>Overall Rating <span class="required">*</span></label>
             <div class="radio-group">
-              <label class="radio-label">
+              <label class="radio-label rating-good">
                 <input type="radio" name="rating" value="Good" />
                 <i class="fa-solid fa-face-smile"></i> Good
               </label>
-              <label class="radio-label">
+
+              <label class="radio-label rating-average">
                 <input type="radio" name="rating" value="Average" />
                 <i class="fa-solid fa-face-meh"></i> Average
               </label>
-              <label class="radio-label">
+
+              <label class="radio-label rating-poor">
                 <input type="radio" name="rating" value="Poor" />
                 <i class="fa-solid fa-face-frown"></i> Poor
               </label>
             </div>
-            <span class="error-msg" id="rating-error"
-              >Please select a rating.</span
-            >
+            <span class="error-msg" id="rating-error">Please select a rating.</span>
           </div>
 
           <div class="form-group">
@@ -165,6 +175,11 @@
             </div>
           </div>
 
+          <!-- 
+          The block completes the feedback form with optional user input fields and the submit button.
+          It allows the user to choose a preferred session time, write additional comments, and then
+          submit the form to send their feedback.
+        -->
           <div class="form-group">
             <label for="preference">Preferred Session Time</label>
             <select id="preference" name="preference">

@@ -91,10 +91,7 @@
               class="card-img"
             />
             <div class="card-body">
-              <div
-                class="card-icon"
-                style="background: #ebf4ff; color: #2c7be5"
-              >
+              <div class="card-icon card-icon-web">
                 <i class="fa-solid fa-laptop-code"></i>
               </div>
               <h3>Web Development Basics</h3>
@@ -139,10 +136,7 @@
               class="card-img"
             />
             <div class="card-body">
-              <div
-                class="card-icon"
-                style="background: #f5f3ff; color: #7c3aed"
-              >
+              <div class="card-icon card-icon-uiux"> <!-- shows the workshop icon with colors related to the UI/UX category -->
                 <i class="fa-solid fa-palette"></i>
               </div>
               <h3>UI/UX Design Introduction</h3>
@@ -187,10 +181,7 @@
               class="card-img"
             />
             <div class="card-body">
-              <div
-                class="card-icon"
-                style="background: #ecfdf5; color: #10b981"
-              >
+              <div class="card-icon card-icon-ai"> <!-- shows the workshop icon with colors related to the AI category -->
                 <i class="fa-solid fa-robot"></i>
               </div>
               <h3>AI Tools for Students</h3>
@@ -234,10 +225,7 @@
               class="card-img"
             />
             <div class="card-body">
-              <div
-                class="card-icon"
-                style="background: #fffbeb; color: #d97706"
-              >
+              <div class="card-icon card-icon-career"> <!-- shows the workshop icon with colors related to the career skills category -->
                 <i class="fa-solid fa-briefcase"></i>
               </div>
               <h3>Career Development Skills</h3>
@@ -340,6 +328,11 @@
           </button>
         </div>
 
+        <!-- 
+        Displays the selected workshop information inside the booking modal.
+        It shows the workshop name, date, time, joining link, and a short note to inform
+        the user that the booking details will be sent to their email after confirmation.
+      -->
         <div id="modal-workshop-info">
           <p id="info-name"></p>
           <div id="info-details">
@@ -370,13 +363,11 @@
               >
             </div>
 
-            <div class="form-group">
-              <label for="b-lastname"
-                >Last Name
-                <span style="color: var(--text-light); font-weight: 400"
-                  >(optional)</span
-                ></label
-              >
+          <div class="form-group">
+              <label for="b-lastname">
+                Last Name
+                <span class="optional-label">(optional)</span> <!-- shows that this field is not required -->
+              </label>
               <input
                 type="text"
                 id="b-lastname"
@@ -389,7 +380,7 @@
           <div class="form-group">
             <label for="b-email"
               >Email Address <span class="required">*</span></label
-            >
+            > <!-- label for the required email input field -->
             <input
               type="email"
               id="b-email"
@@ -401,6 +392,11 @@
             >
           </div>
 
+          <!-- 
+            The block informs the user about the information they will receive by email
+            after completing the workshop booking. It lists the main booking details and
+            supporting materials that will be sent for confirmation and preparation.
+          -->
           <div id="booking-will-receive">
             <p>
               <i class="fa-solid fa-envelope-open-text"></i>

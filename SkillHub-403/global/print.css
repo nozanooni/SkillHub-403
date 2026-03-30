@@ -2,32 +2,62 @@
 /* Name=Shahenaz Abushanab , ID=2215050, Section=DAR, Date=20/3 */
 /* Name=Raghad Abdullah Alzahrani , ID=2206740, Section=DAR, Date=20/3 */
 
+/*
+  This file defines the print styles for the schedule page.
+  It hides all page content by default and makes only the schedule table
+  visible when printing. It also places the table at the top of the page,
+  preserves the table header color, and sets the printed page to A4
+  landscape with suitable margins.
+*/
 @media print {
-
+  /* display: none is used for everything we dont want printed, and then explicitly show only the table area */
   /* Hide all elements by default */
-  body * { visibility: hidden; }
-
-  /* Show only the schedule table and its contents */
-  #schedule-table,
-  #schedule-table * {
-    visibility: visible;
+  /* Hide page sections that should not appear in print */
+  header,
+  .page-hero,
+  footer,
+  .btn,
+  .fade-in,
+  body > :not(.section) {
+    display: none !important;
   }
 
-  /* Position the table at the top of the printed page */
-  #schedule-table {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+  /* Remove extra spacing from the page */
+  body {
+    margin: 0;
+    padding: 0;
+    background: white;
   }
 
-  /* Remove shadows and borders for clean printing */
+  /* Remove section spacing so the table starts immediately */
+  .section,
+  .container {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: none !important;
+  }
+
+  /* Hide everything inside the section except the table wrapper */
+  .section > .container > *:not(.table-wrapper) {
+    display: none !important;
+  }
+
+  /* Show the table wrapper normally */
   .table-wrapper {
+    display: block !important;
     box-shadow: none;
     border: none;
+    overflow: visible;
   }
 
-  /* Ensure table header background prints correctly */
+  /* Show only the table */
+  #schedule-table {
+    display: table !important;
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Keep header color in print */
   table#schedule-table thead tr {
     background: #2C7BE5 !important;
     -webkit-print-color-adjust: exact;
